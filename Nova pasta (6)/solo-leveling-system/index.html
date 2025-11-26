@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Interface</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="system-overlay"></div>
+
+    <div class="app-container">
+        
+        <!-- Header / Status Bar -->
+        <header class="status-header">
+            <div class="player-info">
+                <h1 id="player-name">PLAYER</h1>
+                <span class="job-title">JOB: <span id="player-job">NONE</span></span>
+            </div>
+            <div class="level-badge">
+                <span>LEVEL</span>
+                <span id="player-level">1</span>
+            </div>
+        </header>
+
+        <!-- Main Dashboard -->
+        <main>
+            <!-- Stats Section -->
+            <section class="panel stats-panel">
+                <div class="panel-header">STATUS</div>
+                <div class="stats-grid">
+                    <div class="stat-row">
+                        <span>FORÇA</span>
+                        <span id="stat-str" class="stat-val">10</span>
+                    </div>
+                    <div class="stat-row">
+                        <span>VITALIDADE</span>
+                        <span id="stat-vit" class="stat-val">10</span>
+                    </div>
+                    <div class="stat-row">
+                        <span>INTELIGÊNCIA</span>
+                        <span id="stat-int" class="stat-val">10</span>
+                    </div>
+                    <div class="stat-row">
+                        <span>PERCEPÇÃO</span>
+                        <span id="stat-per" class="stat-val">10</span>
+                    </div>
+                    <div class="stat-row">
+                        <span>AGILIDADE</span>
+                        <span id="stat-agi" class="stat-val">10</span>
+                    </div>
+                </div>
+                <div class="xp-bar-container">
+                    <div class="xp-text">XP: <span id="xp-current">0</span> / <span id="xp-max">100</span></div>
+                    <div class="xp-track">
+                        <div class="xp-fill" id="xp-fill" style="width: 0%"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quests Section -->
+            <section class="panel quests-panel">
+                <div class="panel-header">
+                    <span>QUESTS DIÁRIAS</span>
+                    <span class="timer" id="quest-timer">00:00:00</span>
+                </div>
+                <div class="quest-list" id="quest-list">
+                    <!-- Quests injected here -->
+                </div>
+                <button class="btn-system" id="btn-add-quest">+ NOVA QUEST</button>
+            </section>
+        </main>
+
+        <!-- Notifications -->
+        <div id="notification-area"></div>
+
+        <!-- Modal for Level Up / Alerts -->
+        <div id="system-modal" class="modal hidden">
+            <div class="modal-content">
+                <h2 id="modal-title">SYSTEM ALERT</h2>
+                <p id="modal-message">Message goes here.</p>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Interface</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="system-overlay"></div>
+
+    <div class="app-container">
+        
+        <!-- Header / Status Bar -->
+        <header class="status-header">
+            <div class="player-info">
+                <h1 id="player-name">PLAYER</h1>
+                <span class="job-title">JOB: <span id="player-job">NONE</span></span>
+            </div>
+            <div class="level-badge">
+                <span>LEVEL</span>
+                <span id="player-level">1</span>
+            </div>
+        </header>
+
+        <!-- Main Dashboard -->
+        <main>
+            <!-- Stats Section -->
+            <section class="panel stats-panel">
+                <div class="panel-header">STATUS</div>
+                <div class="stats-grid">
+                    <div class="stat-row">
+                        <span>FORÇA</span>
+                        <span id="stat-str" class="stat-val">10</span>
+                    </div>
+                    <div class="stat-row">
+                        <span>VITALIDADE</span>
+                        <span id="stat-vit" class="stat-val">10</span>
+                    </div>
+                    <div class="stat-row">
+                        <span>INTELIGÊNCIA</span>
+                        <span id="stat-int" class="stat-val">10</span>
+                    </div>
+                    <div class="stat-row">
+                        <span>PERCEPÇÃO</span>
+                        <span id="stat-per" class="stat-val">10</span>
+                    </div>
+                    <div class="stat-row">
+                        <span>AGILIDADE</span>
+                        <span id="stat-agi" class="stat-val">10</span>
+                    </div>
+                </div>
+                <div class="xp-bar-container">
+                    <div class="xp-text">XP: <span id="xp-current">0</span> / <span id="xp-max">100</span></div>
+                    <div class="xp-track">
+                        <div class="xp-fill" id="xp-fill" style="width: 0%"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quests Section -->
+            <section class="panel quests-panel">
+                <div class="panel-header">
+                    <span>QUESTS DIÁRIAS</span>
+                    <span class="timer" id="quest-timer">00:00:00</span>
+                </div>
+                <div class="quest-list" id="quest-list">
+                    <!-- Quests injected here -->
+                </div>
+                <button class="btn-system" id="btn-add-quest">+ NOVA QUEST</button>
+            </section>
+        </main>
+
+        <!-- Notifications -->
+        <div id="notification-area"></div>
+
+        <!-- Modal for Level Up / Alerts -->
+        <div id="system-modal" class="modal hidden">
+            <div class="modal-content">
+                <h2 id="modal-title">SYSTEM ALERT</h2>
+                <p id="modal-message">Message goes here.</p>
+                <button class="btn-system" onclick="UI.closeModal()">ACEITAR</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Supabase SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    
+    <script src="js/supabase-config.js"></script>
+    <script src="js/database.js"></script>
+    <script src="js/system.js"></script>
+    <script src="js/quests.js"></script>
+    <script src="js/ui.js"></script>
+    <script>
+        // Init
+        document.addEventListener('DOMContentLoaded', async () => {
+            // Check Auth
+            const { data: { session } } = await supabase.auth.getSession();
+            
+            if (session) {
+                console.log("Player identified:", session.user.email);
+                System.init(session.user);
+                Quests.init();
+                UI.init();
+            } else {
+                // No user, redirect to login
+                window.location.href = 'login.html';
+            }
+
+            // Listen for auth changes
+            supabase.auth.onAuthStateChange((event, session) => {
+                if (event === 'SIGNED_OUT') {
+                    window.location.href = 'login.html';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Login</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .login-container {
+            width: 100%;
+            max-width: 400px;
+            padding: 40px;
+            background: rgba(11, 12, 16, 0.95);
+            border: 2px solid var(--system-blue);
+            box-shadow: 0 0 30px var(--system-blue-dim);
+            text-align: center;
+            position: relative;
+            animation: fadeIn 1s ease-out;
+        }
+        .login-container::before {
+            content: 'SYSTEM ACCESS';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #000;
+            padding: 0 10px;
+            color: var(--system-blue);
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .input-group label {
+            display: block;
+            color: var(--system-blue);
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--system-blue-dim);
+            color: #fff;
+            font-family: var(--font-tech);
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s;
+        }
+        .input-group input:focus {
+            border-color: var(--system-blue);
+            box-shadow: 0 0 10px var(--system-blue-dim);
+        }
+        .btn-login {
+            width: 100%;
+            padding: 12px;
+            background: var(--system-blue);
+            color: #000;
+            border: none;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: var(--font-tech);
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            transition: all 0.3s;
+        }
+        .btn-login:hover {
+            background: #fff;
+            box-shadow: 0 0 20px var(--system-blue);
+        }
+        .btn-google {
+            background: #fff;
+            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .divider {
+            margin: 20px 0;
+            color: var(--text-dim);
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .divider::before, .divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--system-border);
+        }
+        .error-msg {
+            color: var(--alert-red);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <style>
+        /* ... existing styles ... */
+        .toggle-container {
+            display: flex;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--system-blue-dim);
+        }
+        .toggle-btn {
+            flex: 1;
+            background: transparent;
+            border: none;
+            color: var(--text-dim);
+            padding: 10px;
+            cursor: pointer;
+            font-family: var(--font-tech);
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+        .toggle-btn.active {
+            color: var(--system-blue);
+            border-bottom: 2px solid var(--system-blue);
+            text-shadow: 0 0 5px var(--system-blue);
+        }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <h1 style="color: var(--system-blue); margin-bottom: 20px; text-shadow: 0 0 10px var(--system-blue);">SYSTEM ACCESS</h1>
+        
+        <div class="toggle-container">
+            <button id="tab-login" class="toggle-btn active">LOGIN</button>
+            <button id="tab-register" class="toggle-btn">REGISTER</button>
+        </div>
+
+        <div id="error-message" class="error-msg"></div>
+
+        <form id="auth-form">
+            <div class="input-group">
+                <label>EMAIL</label>
+                <input type="email" id="email" required placeholder="hunter@system.com">
+            </div>
+            <div class="input-group">
+                <label>PASSWORD</label>
+                <input type="password" id="password" required placeholder="********">
+            </div>
+            <div class="input-group hidden" id="group-confirm">
+                <label>CONFIRM PASSWORD</label>
+                <input type="password" id="confirm-password" placeholder="********">
+            </div>
+            <button type="submit" class="btn-login" id="btn-submit">ENTER SYSTEM</button>
+        </form>
+
+        <div class="divider">OR</div>
+
+        <button id="btn-google" class="btn-login btn-google">
+            <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" width="20" alt="G">
+            CONTINUE WITH GMAIL
+        </button>
+
+
+    </div>
+
+    <!-- Supabase SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="js/supabase-config.js"></script>
+    <script src="js/Loginjs.js"></script>
+</body>
+</html>
